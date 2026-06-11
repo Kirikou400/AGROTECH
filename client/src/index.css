@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  @apply font-sans;
+}
+
+.shadow-glow {
+  box-shadow: 0 20px 50px rgba(45, 55, 72, 0.12);
+}

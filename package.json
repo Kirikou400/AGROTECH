@@ -1,0 +1,12 @@
+{
+  "name": "agrotech-hub",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run start:all",
+    "start:all": "concurrently \"npm --prefix server run dev\" \"npm --prefix client run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
