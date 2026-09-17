@@ -33,19 +33,25 @@ router.get('/produce/:id', async (req, res) => {
   });
 });
 
-router.post('/orders', auth, authorize('buyer'), async (req, res) => {
-  const { items, deliveryOption, paymentMethod } = req.body;
+router.post('/orders', auth, async (req, res) => {
+  const { items, deliveryOption, paymentMethod, total: requestedTotal } = req.body;
   if (!items || !items.length) {
     return res.status(400).json({ message: 'Order items are required' });
   }
 
-  const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const deliveryFee = deliveryOption === 'partner-logistics' ? 2500 : deliveryOption === 'courier' ? 1200 : 0;
+  const itemsTotal = items.reduce((sum, item) => sum + (Number(item.price) || 0) * (Number(item.quantity) || 1), 0);
+  const finalTotal = requestedTotal ? Number(requestedTotal) : itemsTotal + deliveryFee;
+
   const order = store.createOrder({
     buyer: req.user.id,
+    buyerName: req.user.name,
     items,
-    total,
-    deliveryOption,
-    paymentMethod,
+    total: finalTotal,
+    deliveryOption: deliveryOption || 'courier',
+    paymentMethod: paymentMethod || 'paystack',
+    paymentStatus: 'paid', // Mark as paid for demo checkout flow
+    status: 'confirmed',
   });
 
   res.status(201).json(order);
@@ -54,6 +60,13 @@ router.post('/orders', auth, authorize('buyer'), async (req, res) => {
 router.get('/orders', auth, async (req, res) => {
   const orders = store.findOrdersByBuyer(req.user.id);
   res.json(orders);
+});
+
+router.get('/orders/:id', auth, async (req, res) => {
+  const orders = store.findOrdersByBuyer(req.user.id);
+  const order = orders.find((o) => String(o._id) === String(req.params.id) || String(o.id) === String(req.params.id));
+  if (!order) return res.status(404).json({ message: 'Order not found' });
+  res.json(order);
 });
 
 module.exports = router;

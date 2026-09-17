@@ -1,3 +1,4 @@
+
 const users = [
   {
     name: 'Amina Bello',
@@ -29,61 +30,101 @@ const users = [
 const produce = [
   {
     category: 'grains',
-    name: 'Premium Maize',
+    name: 'Premium White Maize',
     quantity: 120,
     price: 2500,
     location: 'Kano',
-    description: 'Bulk maize suitable for animal feed and milling.',
+    description: 'Clean, dried yellow and white bulk maize suitable for milling, poultry feed, and food production.',
   },
   {
     category: 'vegetables',
-    name: 'Organic Spinach',
+    name: 'Fresh Jos Bell Peppers',
+    quantity: 85,
+    price: 1800,
+    location: 'Plateau',
+    description: 'Crisp green and red bell peppers harvested fresh from the Jos plateau highlands.',
+  },
+  {
+    category: 'tubers',
+    name: 'Benue Pona Yam Tubers',
+    quantity: 200,
+    price: 3200,
+    location: 'Benue',
+    description: 'Export-grade dry-season yams from the Food Basket of the Nation. High starch content, premium size.',
+  },
+  {
+    category: 'vegetables',
+    name: 'Organic Farm Spinach & Ugwu',
     quantity: 60,
-    price: 400,
+    price: 600,
     location: 'Ibadan',
-    description: 'Fresh leafy greens ready for market.',
+    description: 'Freshly harvested fluted pumpkin leaves (Ugwu) and green spinach, pesticide-free.',
+  },
+  {
+    category: 'fruits',
+    name: 'Sweet Ogbomoso Mangoes',
+    quantity: 150,
+    price: 1500,
+    location: 'Oyo',
+    description: 'Naturally sweetened, ripe Ogbomoso export mangoes packed in ventilated crates.',
   },
   {
     category: 'livestock',
-    name: 'Free-range Goats',
-    quantity: 12,
-    price: 90000,
+    name: 'Free-range Sahel Goats',
+    quantity: 15,
+    price: 75000,
     location: 'Enugu',
-    description: 'Healthy goats for sale with vaccination records.',
+    description: 'Fully grown, healthy Sahelian meat goats with complete veterinary vaccination documentation.',
   },
   {
     category: 'grains',
-    name: 'Sorghum Mix',
-    quantity: 80,
-    price: 2100,
+    name: 'Certified Soybean Bags',
+    quantity: 95,
+    price: 4500,
     location: 'Kaduna',
-    description: 'Drought-tolerant sorghum for feed and brewing.',
+    description: 'High-protein grain soybeans graded for edible oil processing and industrial feed formulation.',
+  },
+  {
+    category: 'livestock',
+    name: 'Smoked Table Catfish',
+    quantity: 40,
+    price: 12000,
+    location: 'Lagos',
+    description: 'Oven-dried, hygienically packaged catfish fillets with 6-month shelf life. Zero sand or charcoal residue.',
   },
 ];
 
 const analytics = [
-  { metric: 'Monthly demand growth', value: 18, trend: 'up' },
-  { metric: 'Average crop price', value: 4500, trend: 'up' },
-  { metric: 'Farmer participation', value: 382, trend: 'up' },
-  { metric: 'Logistics bookings', value: 124, trend: 'flat' },
+  { metric: 'Monthly demand growth', value: 24, trend: 'up' },
+  { metric: 'Average crop price (₦)', value: 4850, trend: 'up' },
+  { metric: 'Farmer participation', value: 412, trend: 'up' },
+  { metric: 'Logistics bookings', value: 168, trend: 'up' },
+  { metric: 'Fulfilled orders', value: 345, trend: 'up' },
+  { metric: 'Active buyers', value: 580, trend: 'up' },
 ];
 
 const blogPosts = [
   {
-    title: 'Smart Farming with IoT and Drones',
-    excerpt: 'Discover how drones and sensors can improve yield and reduce waste across Nigerian farms.',
-    content: 'AgroTech Hub is preparing to integrate security-tech tools like drone surveillance and GPS tracking to support modern farming operations.',
+    title: 'Smart Farming with IoT, Drones and Satellite Monitoring',
+    excerpt: 'Discover how drones and soil sensors are boosting agricultural yield and reducing harvest loss across Nigeria.',
+    content: 'Arab’s AgroTech Hub is bridging the gap between smallholder farmers and modern precision tools. Through affordable drone aerial multispectral imaging, GPS-guided soil mapping, and remote moisture monitoring, farmers in Kano, Kaduna, and Oyo are reducing input waste by 30% while raising crop yields significantly. We are committed to making these technologies accessible through cooperative pooling and shared equipment centers.',
   },
   {
-    title: 'Funding access for smallholder farmers',
-    excerpt: 'Learn about grants, loans, and partnerships that help growers scale.',
-    content: 'Our platform connects farmers with funding resources and digital training to support growth and formalization.',
+    title: 'Accessing Agri-Grants, Bank of Agriculture Loans, and Capital',
+    excerpt: 'A practical roadmap to unlocking agricultural grants, working capital loans, and equity funding for growers.',
+    content: 'Securing capital remains one of the largest bottlenecks for Nigerian agri-entrepreneurs. In this guide, we outline verified avenues including the Anchor Borrowers Program, Bank of Industry SME agro-funds, and climate-smart innovation grants. Registered members on Arab’s AgroTech Hub can access streamlined digital receipts, sales records, and credit verification documents that financial institutions require for loan underwriting.',
   },
   {
-    title: 'Top 5 crops buyers want in 2026',
-    excerpt: 'A quick market update on crop demand and pricing trends.',
-    content: 'Buyers are looking for quality grains, vegetables, and livestock from verified producers. We monitor trends to help sellers price competitively.',
+    title: 'Nigerian Crop Demand Forecast & High-Yield Markets in 2026',
+    excerpt: 'Crucial market intelligence on grain pricing, cold storage logistics, and high-demand commercial vegetables.',
+    content: 'Commercial food processors, exporters, and urban retailers are actively seeking consistent supplies of graded grain maize, soya beans, dry-season onions, and table fish. By planning your planting cycles according to forward demand contracts available on Arab’s AgroTech Hub, growers can hedge against post-harvest market crashes and lock in guaranteed purchase prices before field harvest begins.',
+  },
+  {
+    title: 'Minimizing Post-Harvest Losses with Solar Cold Rooms',
+    excerpt: 'How temperature-controlled logistics and rural solar refrigeration preserve vegetable freshness and profits.',
+    content: 'Up to 45% of perishable fruits and vegetables in West Africa are lost in transit. By connecting local farm hubs to solar-powered cold hubs and temperature-regulated logistics partners through Arab’s AgroTech Hub, farmers preserve nutritional value, extend market shelf-life by up to 3 weeks, and unlock metropolitan buyer pricing.',
   },
 ];
 
 module.exports = { users, produce, analytics, blogPosts };
+

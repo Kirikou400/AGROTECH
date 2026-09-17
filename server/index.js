@@ -32,7 +32,15 @@ app.use('/api/blog', blogRoutes);
 app.use('/api/seed', seedRoutes);
 
 app.get('/', (req, res) => {
-  res.send({ message: "Welcome to Arab's AgroTech Hub API" });
+  res.send({ message: "Welcome to Arab's AgroTech Hub API", status: 'online' });
+});
+
+app.get('/api/health', (req, res) => {
+  res.json({
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    storeType: process.env.MONGODB_URI ? 'mongodb' : 'in-memory',
+  });
 });
 
 app.use((err, req, res, next) => {

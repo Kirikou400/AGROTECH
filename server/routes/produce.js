@@ -38,7 +38,12 @@ router.delete('/inventory/:id', auth, authorize('farmer'), async (req, res) => {
     return res.status(404).json({ message: 'Produce item not found' });
   }
   store.deleteProduce(req.params.id);
-  res.json({ message: 'Produce removed' });
+  res.json({ message: 'Produce removed successfully', id: req.params.id });
+});
+
+router.get('/orders', auth, authorize('farmer'), async (req, res) => {
+  const orders = store.findOrdersBySeller(req.user.id);
+  res.json(orders);
 });
 
 module.exports = router;
